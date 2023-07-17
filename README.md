@@ -1,10 +1,43 @@
 # avi-site-backend
-This app is a backend for the avi main site project. It is a REST API deployed to Firebase Hosting, using Firestore Database.
+This app is a backend for the AVI main site project. It is a REST API developed in NodeJS and deployed to Firebase Hosting. 
+The data are stored in Firestore Database. Firestore is a schemaless NoSQL database that stores data in documents (similar to MongoDB but schemaless).
+
+## Requirements
+- NodeJS
+- ExpressJS
+- NPM
+- Firebase CLI
+
+## Packages and Configurations
+### routes
+- Path in project: `./src/routes`
+- Description (like Controller): This package contains all routes of the API. Each route is a file in this package. <br />
+The routes are grouped by the resource they are related to. For example, all routes related to users are in the `userRouter.js` file.
+
+### models
+- No models in this project because we use a NoSQL database (Firestore) that is schemaless.
+
+### services
+- Path in project: `./src/services`
+- Description: This package contains all functionalities of the API (like Create, Read, Update, Delete ...). <br />
+Each service is a file in this package.
+- Example: `./src/services/userService.js`
+
+### firebase config
+- Path in project: `./src/firebaseConfig.js`
+- Description: This file contains the configuration of the Firebase project.
 
 ## API Documentation
-| Endpoint        | HTTP Method | Description        |
-|-----------------| --- |--------------------|
-| `/api/v1/users` | GET | Get all users data |
+- Host: `https://{host}/api/v1`
+
+### Users
+| Endpoint | HTTP Method | Description        |
+|----------| --- |--------------------|
+| `/users` | GET | Get all users data |
+| `/users` | POST | Create a new user |
+| `/users/:id` | GET | Get a user by id |
+| `/users/:id` | PUT | Update a user by id |
+| `/users/:id` | DELETE | Delete a user by id |
 
 ## How to run
 1. Clone this repository
