@@ -57,7 +57,7 @@ The data are stored in Firestore Database. Firestore is a schemaless NoSQL datab
 | `/events/:id`                | GET         | Get an event by id                                           |
 | `/events/:id`                | PUT         | Update an event by id                                        |
 | `/events/:id`                | DELETE      | Delete an event by id                                        |
-| `/events/time`               | GET         | Get events by time (using params m, y to select month, year) |
+| `/events/time?m=_&?y=_`      | GET         | Get events by time (using params m, y to select month, year) |
 | `/events/keywords/:keywords` | GET         | Get events by keywords                                       |
 
 ## How to run
