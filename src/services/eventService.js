@@ -67,6 +67,7 @@ function deleteEventById(id) {
 }
 
 function getEventsByTime(month = "", year = "") {
+    if (month.length === 1) {month = "0" + month}
     return new Promise((resolve, reject) => {
         collection.get().then((snapshot) => {
             let events = [];
