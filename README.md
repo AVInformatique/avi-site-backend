@@ -50,15 +50,16 @@ The data are stored in Firestore Database. Firestore is a schemaless NoSQL datab
 
 ### Events
 
-| Endpoint                     | HTTP Method | Description                                                  |
-| ---------------------------- | ----------- | ------------------------------------------------------------ |
-| `/events`                    | GET         | Get all events data                                          |
-| `/events`                    | POST        | Create a new event                                           |
-| `/events/:id`                | GET         | Get an event by id                                           |
-| `/events/:id`                | PUT         | Update an event by id                                        |
-| `/events/:id`                | DELETE      | Delete an event by id                                        |
-| `/events/time?m=_&?y=_`      | GET         | Get events by time (using params m, y to select month, year) |
-| `/events/keywords/:keywords` | GET         | Get events by keywords                                       |
+| Endpoint                     | HTTP Method | Description                                                   |
+| ---------------------------- | ----------- | ------------------------------------------------------------- |
+| `/events`                    | GET         | Get all events data                                           |
+| `/events`                    | POST        | Create a new event                                            |
+| `/events/:id`                | GET         | Get an event by id                                            |
+| `/events/:id`                | PUT         | Update an event by id                                         |
+| `/events/:id`                | DELETE      | Delete an event by id                                         |
+| `/events/time?m=_&?y=_`      | GET         | Get events by month (using params m, y to select month, year) |
+| `/events/time?y=_`           | GET         | Get events by year (using params y to select year)            |
+| `/events/keywords/:keywords` | GET         | Get events by keywords                                        |
 
 ## How to run
 
