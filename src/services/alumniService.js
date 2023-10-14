@@ -1,15 +1,15 @@
 const { db } = require('../config/firebaseConfig');
 
-const collection = db.collection('users');
+const collection = db.collection('alumnis');
 
-function getUsers() {
+function getAlumnis() {
     return new Promise((resolve, reject) => {
         collection.get().then((snapshot) => {
-            let users = [];
+            let alumnis = [];
             snapshot.forEach((doc) => {
-                users.push(doc.data());
+                alumnis.push(doc.data());
             });
-            resolve(users);
+            resolve(alumnis);
         })
             .catch((err) => {
                 reject(err);
@@ -17,14 +17,14 @@ function getUsers() {
     });
 }
 
-function addUser(user) {
-    if (!user.name) {
+function addAlumni(alumni) {
+    if (!alumni.name) {
         return new Promise((resolve, reject) => {
             reject('Name is required');
         });
     }
     return new Promise((resolve, reject) => {
-        collection.add(user).then((doc) => {
+        collection.add(alumni).then((doc) => {
             resolve(doc.id);
         }).catch((err) => {
             reject(err);
@@ -32,11 +32,11 @@ function addUser(user) {
     });
 }
 
-function getUserById(id) {
+function getAlumniById(id) {
     return new Promise((resolve, reject) => {
         collection.doc(id).get().then((doc) => {
             if (!doc.exists) {
-                reject('User not found');
+                reject('Alumni not found');
             } else {
                 resolve(doc.data());
             }
@@ -46,9 +46,9 @@ function getUserById(id) {
     });
 }
 
-function updateUserById(id, user) {
+function updateAlumniById(id, alumni) {
     return new Promise((resolve, reject) => {
-        collection.doc(id).update(user).then(() => {
+        collection.doc(id).update(alumni).then(() => {
             resolve();
         }).catch((err) => {
             reject(err);
@@ -56,7 +56,7 @@ function updateUserById(id, user) {
     });
 }
 
-function deleteUserById(id) {
+function deleteAlumniById(id) {
     return new Promise((resolve, reject) => {
         collection.doc(id).delete().then(() => {
             resolve();
@@ -67,10 +67,10 @@ function deleteUserById(id) {
 }
 
 module.exports = {
-    getUsers,
-    addUser,
-    getUserById,
-    updateUserById,
-    deleteUserById,
+    getAlumnis,
+    addAlumni,
+    getAlumniById,
+    updateAlumniById,
+    deleteAlumniById,
 };
 

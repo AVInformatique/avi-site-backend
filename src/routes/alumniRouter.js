@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const userService = require('../services/userService');
+const alumniService = require('../services/alumniService');
 
 router.get('/', (req, res) => {
-    userService.getUsers()
-        .then((users) => {
-            res.status(200).json(users);
+    alumniService.getAlumnis()
+        .then((alumnis) => {
+            res.status(200).json(alumnis);
         })
         .catch((error) => {
             res.status(400).json(error);
@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    userService.addUser(req.body)
+    alumniService.addAlumni(req.body)
         .then((id) => {
             res.status(201).json(id);
         })
@@ -23,9 +23,9 @@ router.post('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-    userService.getUserById(req.params.id)
-        .then((user) => {
-            res.status(200).json(user);
+    alumniService.getAlumniById(req.params.id)
+        .then((alumni) => {
+            res.status(200).json(alumni);
         })
         .catch((error) => {
             res.status(400).json(error);
@@ -33,7 +33,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-    userService.updateUserById(req.params.id, req.body)
+    alumniService.updateAlumniById(req.params.id, req.body)
         .then(() => {
             res.status(200).json();
         })
@@ -43,7 +43,7 @@ router.put('/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-    userService.deleteUserById(req.params.id)
+    alumniService.deleteAlumniById(req.params.id)
         .then(() => {
             res.status(204).json();
         })
