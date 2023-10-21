@@ -69,12 +69,6 @@ The data are stored in Firestore Database. Firestore is a schemaless NoSQL datab
 4. Open `http://localhost:3000` in your browser
 5. Enjoy!
 
-## How to deploy
-
-1. Run `npm run build`
-2. Run `firebase deploy`
-3. Enjoy!
-
 ## How to contribute
 
 1. Fork this repository
