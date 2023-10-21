@@ -40,13 +40,13 @@ The data are stored in Firestore Database. Firestore is a schemaless NoSQL datab
 
 ### Users
 
-| Endpoint     | HTTP Method | Description         |
-| ------------ | ----------- | ------------------- |
-| `/users`     | GET         | Get all users data  |
-| `/users`     | POST        | Create a new user   |
-| `/users/:id` | GET         | Get a user by id    |
-| `/users/:id` | PUT         | Update a user by id |
-| `/users/:id` | DELETE      | Delete a user by id |
+| Endpoint       | HTTP Method | Description            |
+| -------------- | ----------- | ---------------------- |
+| `/alumnis`     | GET         | Get all alumnis data   |
+| `/alumnis`     | POST        | Create a new alumnis   |
+| `/alumnis/:id` | GET         | Get an alumni by id    |
+| `/alumnis/:id` | PUT         | Update an alumni by id |
+| `/alumnis/:id` | DELETE      | Delete an alumni by id |
 
 ### Events
 
@@ -68,12 +68,6 @@ The data are stored in Firestore Database. Firestore is a schemaless NoSQL datab
 3. Run `npm start`
 4. Open `http://localhost:3000` in your browser
 5. Enjoy!
-
-## How to deploy
-
-1. Run `npm run build`
-2. Run `firebase deploy`
-3. Enjoy!
 
 ## How to contribute
 
